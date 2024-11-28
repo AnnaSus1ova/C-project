@@ -359,6 +359,34 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="picture">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-30</y>
+      <width>951</width>
+      <height>588</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../my-background.png</pixmap>
+    </property>
+   </widget>
+   <zorder>picture</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>verticalWidget_6</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>pushButton_6</zorder>
+   <zorder>pushButton_7</zorder>
+   <zorder>verticalWidget_2</zorder>
+   <zorder>verticalWidget_5</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>lineEdit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
