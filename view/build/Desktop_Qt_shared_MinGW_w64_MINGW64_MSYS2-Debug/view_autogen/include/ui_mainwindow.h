@@ -28,25 +28,25 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton_3;
+    QPushButton *Graph4;
     QWidget *verticalWidget_6;
     QVBoxLayout *verticalLayout_7;
     QLineEdit *lineEdit_3;
-    QPlainTextEdit *plainTextEdit_4;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_7;
+    QPlainTextEdit *Ordinate;
+    QPushButton *Graph2;
+    QPushButton *AddFile1;
+    QPushButton *AddFile2;
     QWidget *verticalWidget_2;
     QVBoxLayout *verticalLayout_3;
     QLineEdit *lineEdit_4;
-    QPlainTextEdit *plainTextEdit_2;
+    QPlainTextEdit *Abscissa;
     QWidget *verticalWidget_5;
     QVBoxLayout *verticalLayout_6;
     QLineEdit *lineEdit_2;
-    QTextBrowser *textBrowser;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QTextBrowser *ShowError;
+    QPushButton *Graph3;
+    QPushButton *Graph1;
+    QPushButton *Error;
     QLineEdit *lineEdit;
     QLabel *picture;
     QMenuBar *menubar;
@@ -62,13 +62,13 @@ public:
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 0, 0);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(30, 235, 291, 41));
+        Graph4 = new QPushButton(centralwidget);
+        Graph4->setObjectName("Graph4");
+        Graph4->setGeometry(QRect(30, 235, 291, 41));
         QFont font;
         font.setPointSize(14);
-        pushButton_3->setFont(font);
-        pushButton_3->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
+        Graph4->setFont(font);
+        Graph4->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
         verticalWidget_6 = new QWidget(centralwidget);
         verticalWidget_6->setObjectName("verticalWidget_6");
         verticalWidget_6->setGeometry(QRect(340, 285, 561, 181));
@@ -84,30 +84,30 @@ public:
         lineEdit_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         lineEdit_3->setInputMethodHints(Qt::InputMethodHint::ImhNone);
         lineEdit_3->setFrame(false);
-        lineEdit_3->setCursorPosition(28);
+        lineEdit_3->setCursorPosition(39);
         lineEdit_3->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         lineEdit_3->setReadOnly(true);
 
         verticalLayout_7->addWidget(lineEdit_3);
 
-        plainTextEdit_4 = new QPlainTextEdit(verticalWidget_6);
-        plainTextEdit_4->setObjectName("plainTextEdit_4");
+        Ordinate = new QPlainTextEdit(verticalWidget_6);
+        Ordinate->setObjectName("Ordinate");
 
-        verticalLayout_7->addWidget(plainTextEdit_4);
+        verticalLayout_7->addWidget(Ordinate);
 
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(30, 135, 291, 41));
-        pushButton_5->setFont(font);
-        pushButton_5->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(340, 245, 161, 24));
-        pushButton_6->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
-        pushButton_7 = new QPushButton(centralwidget);
-        pushButton_7->setObjectName("pushButton_7");
-        pushButton_7->setGeometry(QRect(340, 475, 161, 24));
-        pushButton_7->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
+        Graph2 = new QPushButton(centralwidget);
+        Graph2->setObjectName("Graph2");
+        Graph2->setGeometry(QRect(30, 135, 291, 41));
+        Graph2->setFont(font);
+        Graph2->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
+        AddFile1 = new QPushButton(centralwidget);
+        AddFile1->setObjectName("AddFile1");
+        AddFile1->setGeometry(QRect(340, 245, 161, 24));
+        AddFile1->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
+        AddFile2 = new QPushButton(centralwidget);
+        AddFile2->setObjectName("AddFile2");
+        AddFile2->setGeometry(QRect(340, 475, 161, 24));
+        AddFile2->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
         verticalWidget_2 = new QWidget(centralwidget);
         verticalWidget_2->setObjectName("verticalWidget_2");
         verticalWidget_2->setGeometry(QRect(340, 85, 561, 151));
@@ -121,16 +121,16 @@ public:
         lineEdit_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         lineEdit_4->setInputMethodHints(Qt::InputMethodHint::ImhNone);
         lineEdit_4->setFrame(false);
-        lineEdit_4->setCursorPosition(28);
+        lineEdit_4->setCursorPosition(39);
         lineEdit_4->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
         lineEdit_4->setReadOnly(true);
 
         verticalLayout_3->addWidget(lineEdit_4);
 
-        plainTextEdit_2 = new QPlainTextEdit(verticalWidget_2);
-        plainTextEdit_2->setObjectName("plainTextEdit_2");
+        Abscissa = new QPlainTextEdit(verticalWidget_2);
+        Abscissa->setObjectName("Abscissa");
 
-        verticalLayout_3->addWidget(plainTextEdit_2);
+        verticalLayout_3->addWidget(Abscissa);
 
         verticalWidget_5 = new QWidget(centralwidget);
         verticalWidget_5->setObjectName("verticalWidget_5");
@@ -153,29 +153,29 @@ public:
 
         verticalLayout_6->addWidget(lineEdit_2);
 
-        textBrowser = new QTextBrowser(verticalWidget_5);
-        textBrowser->setObjectName("textBrowser");
+        ShowError = new QTextBrowser(verticalWidget_5);
+        ShowError->setObjectName("ShowError");
 
-        verticalLayout_6->addWidget(textBrowser);
+        verticalLayout_6->addWidget(ShowError);
 
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(30, 185, 291, 41));
-        pushButton_4->setFont(font);
-        pushButton_4->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(30, 85, 291, 41));
+        Graph3 = new QPushButton(centralwidget);
+        Graph3->setObjectName("Graph3");
+        Graph3->setGeometry(QRect(30, 185, 291, 41));
+        Graph3->setFont(font);
+        Graph3->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
+        Graph1 = new QPushButton(centralwidget);
+        Graph1->setObjectName("Graph1");
+        Graph1->setGeometry(QRect(30, 85, 291, 41));
         QFont font3;
         font3.setPointSize(14);
         font3.setBold(false);
-        pushButton->setFont(font3);
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(30, 285, 291, 41));
-        pushButton_2->setFont(font);
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
+        Graph1->setFont(font3);
+        Graph1->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
+        Error = new QPushButton(centralwidget);
+        Error->setObjectName("Error");
+        Error->setGeometry(QRect(30, 285, 291, 41));
+        Error->setFont(font);
+        Error->setStyleSheet(QString::fromUtf8("background-color: rgb(225, 225, 225)"));
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName("lineEdit");
         lineEdit->setGeometry(QRect(20, 25, 893, 41));
@@ -195,16 +195,16 @@ public:
         picture->setPixmap(QPixmap(QString::fromUtf8("../../my-background.png")));
         MainWindow->setCentralWidget(centralwidget);
         picture->raise();
-        pushButton_3->raise();
+        Graph4->raise();
         verticalWidget_6->raise();
-        pushButton_5->raise();
-        pushButton_6->raise();
-        pushButton_7->raise();
+        Graph2->raise();
+        AddFile1->raise();
+        AddFile2->raise();
         verticalWidget_2->raise();
         verticalWidget_5->raise();
-        pushButton_4->raise();
-        pushButton->raise();
-        pushButton_2->raise();
+        Graph3->raise();
+        Graph1->raise();
+        Error->raise();
         lineEdit->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -222,16 +222,16 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \321\207\320\265\321\202\320\262\321\221\321\200\321\202\320\276\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
-        lineEdit_3->setText(QCoreApplication::translate("MainWindow", "\320\230\320\267\320\274\320\265\321\200\320\265\320\275\320\270\321\217 \320\262\321\202\320\276\321\200\320\276\320\263\320\276 \320\277\320\260\321\200\320\260\320\274\320\265\321\202\321\200\320\260:", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \320\262\321\202\320\276\321\200\320\276\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\270\320\272\321\200\320\265\320\277\320\270\321\202\321\214 \321\204\320\260\320\271\320\273", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\270\320\272\321\200\320\265\320\277\320\270\321\202\321\214 \321\204\320\260\320\271\320\273", nullptr));
-        lineEdit_4->setText(QCoreApplication::translate("MainWindow", "\320\230\320\267\320\274\320\265\321\200\320\265\320\275\320\270\321\217 \320\277\320\265\321\200\320\262\320\276\320\263\320\276 \320\277\320\260\321\200\320\260\320\274\320\265\321\202\321\200\320\260:", nullptr));
+        Graph4->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \321\207\320\265\321\202\320\262\321\221\321\200\321\202\320\276\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
+        lineEdit_3->setText(QCoreApplication::translate("MainWindow", "\320\230\320\267\320\274\320\265\321\200\320\265\320\275\320\270\321\217 \320\262\321\202\320\276\321\200\320\276\320\263\320\276 \320\277\320\260\321\200\320\260\320\274\320\265\321\202\321\200\320\260 (\320\276\321\200\320\264\320\270\320\275\320\260\321\202\320\260):", nullptr));
+        Graph2->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \320\262\321\202\320\276\321\200\320\276\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
+        AddFile1->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\270\320\272\321\200\320\265\320\277\320\270\321\202\321\214 \321\204\320\260\320\271\320\273", nullptr));
+        AddFile2->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\270\320\272\321\200\320\265\320\277\320\270\321\202\321\214 \321\204\320\260\320\271\320\273", nullptr));
+        lineEdit_4->setText(QCoreApplication::translate("MainWindow", "\320\230\320\267\320\274\320\265\321\200\320\265\320\275\320\270\321\217 \320\277\320\265\321\200\320\262\320\276\320\263\320\276 \320\277\320\260\321\200\320\260\320\274\320\265\321\202\321\200\320\260 (\320\260\320\261\321\201\321\206\320\270\321\201\321\201\320\260):", nullptr));
         lineEdit_2->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\321\207\320\270\321\201\320\273\320\265\320\275\320\275\321\213\320\265 \320\277\320\276\320\263\321\200\320\265\321\210\320\275\320\276\321\201\321\202\320\270:", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \321\202\321\200\320\265\321\202\321\214\320\265\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \320\277\320\265\321\200\320\262\320\276\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\321\207\320\270\321\201\320\273\320\270\321\202\321\214 \320\277\320\276\320\263\321\200\320\265\321\210\320\275\320\276\321\201\321\202\320\270", nullptr));
+        Graph3->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \321\202\321\200\320\265\321\202\321\214\320\265\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
+        Graph1->setText(QCoreApplication::translate("MainWindow", "\320\223\321\200\320\260\321\204\320\270\320\272 \320\277\320\265\321\200\320\262\320\276\320\263\320\276 \320\262\320\270\320\264\320\260", nullptr));
+        Error->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\321\207\320\270\321\201\320\273\320\270\321\202\321\214 \320\277\320\276\320\263\321\200\320\265\321\210\320\275\320\276\321\201\321\202\320\270", nullptr));
         lineEdit->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261\321\200\320\260\320\261\320\276\321\202\321\207\320\270\320\272 \320\273\320\260\320\261\320\276\321\200\320\260\321\202\320\276\321\200\320\275\321\213\321\205 \321\200\320\260\320\261\320\276\321\202", nullptr));
         picture->setText(QString());
     } // retranslateUi

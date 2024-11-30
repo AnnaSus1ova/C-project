@@ -29,7 +29,7 @@
    <string notr="true">background-color: rgb(255, 0, 0);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="Graph4">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -80,13 +80,13 @@
         <set>Qt::InputMethodHint::ImhNone</set>
        </property>
        <property name="text">
-        <string>Измерения второго параметра:</string>
+        <string>Измерения второго параметра (ордината):</string>
        </property>
        <property name="frame">
         <bool>false</bool>
        </property>
        <property name="cursorPosition">
-        <number>28</number>
+        <number>39</number>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -97,11 +97,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_4"/>
+      <widget class="QPlainTextEdit" name="Ordinate"/>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="Graph2">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -122,7 +122,7 @@
      <string>График второго вида</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="AddFile1">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -138,7 +138,7 @@
      <string>Прикрепить файл</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="AddFile2">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -184,13 +184,13 @@
         <set>Qt::InputMethodHint::ImhNone</set>
        </property>
        <property name="text">
-        <string>Измерения первого параметра:</string>
+        <string>Измерения первого параметра (абсцисса):</string>
        </property>
        <property name="frame">
         <bool>false</bool>
        </property>
        <property name="cursorPosition">
-        <number>28</number>
+        <number>39</number>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -201,7 +201,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+      <widget class="QPlainTextEdit" name="Abscissa"/>
      </item>
     </layout>
    </widget>
@@ -252,11 +252,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextBrowser" name="textBrowser"/>
+      <widget class="QTextBrowser" name="ShowError"/>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="Graph3">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -277,7 +277,7 @@
      <string>График третьего вида</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="Graph1">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -299,7 +299,7 @@
      <string>График первого вида</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="Error">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -376,16 +376,16 @@
     </property>
    </widget>
    <zorder>picture</zorder>
-   <zorder>pushButton_3</zorder>
+   <zorder>Graph4</zorder>
    <zorder>verticalWidget_6</zorder>
-   <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_7</zorder>
+   <zorder>Graph2</zorder>
+   <zorder>AddFile1</zorder>
+   <zorder>AddFile2</zorder>
    <zorder>verticalWidget_2</zorder>
    <zorder>verticalWidget_5</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
+   <zorder>Graph3</zorder>
+   <zorder>Graph1</zorder>
+   <zorder>Error</zorder>
    <zorder>lineEdit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
