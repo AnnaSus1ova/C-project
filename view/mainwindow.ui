@@ -29,27 +29,6 @@
    <string notr="true">background-color: rgb(255, 0, 0);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="Graph4">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>235</y>
-      <width>291</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(225, 225, 225)</string>
-    </property>
-    <property name="text">
-     <string>График четвёртого вида</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="verticalWidget_6" native="true">
     <property name="geometry">
      <rect>
@@ -105,9 +84,9 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>135</y>
+      <y>150</y>
       <width>291</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -119,7 +98,7 @@
      <string notr="true">background-color: rgb(225, 225, 225)</string>
     </property>
     <property name="text">
-     <string>График второго вида</string>
+     <string>Квадратичная регрессия</string>
     </property>
    </widget>
    <widget class="QPushButton" name="AddFile1">
@@ -209,9 +188,9 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>345</y>
+      <y>285</y>
       <width>291</width>
-      <height>151</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -256,34 +235,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="Graph3">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>185</y>
-      <width>291</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(225, 225, 225)</string>
-    </property>
-    <property name="text">
-     <string>График третьего вида</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="Graph1">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>85</y>
+      <y>83</y>
       <width>291</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -296,16 +254,16 @@
      <string notr="true">background-color: rgb(225, 225, 225)</string>
     </property>
     <property name="text">
-     <string>График первого вида</string>
+     <string>Линейная регрессия</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Error">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>285</y>
+      <y>220</y>
       <width>291</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -376,14 +334,12 @@
     </property>
    </widget>
    <zorder>picture</zorder>
-   <zorder>Graph4</zorder>
    <zorder>verticalWidget_6</zorder>
    <zorder>Graph2</zorder>
    <zorder>AddFile1</zorder>
    <zorder>AddFile2</zorder>
    <zorder>verticalWidget_2</zorder>
    <zorder>verticalWidget_5</zorder>
-   <zorder>Graph3</zorder>
    <zorder>Graph1</zorder>
    <zorder>Error</zorder>
    <zorder>lineEdit</zorder>
