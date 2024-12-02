@@ -61,6 +61,7 @@ void quadraticRegression(const vector<double>& x, const vector<double>& y, doubl
 }
 
 int main() {
+    // ВМЕСТО X И Y НЕОБХОДИМО БУДЕТ БРАТЬ ДАННЫЕ ИЗ VECTOR_2D
     vector<double> x = {1, 2, 3, 4, 5};
     vector<double> y = {5, 4, 3, 2, 1};
 
