@@ -42,7 +42,9 @@ public:
     QWidget *verticalWidget_5;
     QVBoxLayout *verticalLayout_6;
     QLineEdit *lineEdit_2;
-    QTextBrowser *ShowError;
+    QTextBrowser *ShowError_1;
+    QLineEdit *lineEdit_5;
+    QTextBrowser *ShowError_2;
     QPushButton *Graph1;
     QPushButton *Error;
     QLineEdit *lineEdit;
@@ -134,22 +136,47 @@ public:
         lineEdit_2 = new QLineEdit(verticalWidget_5);
         lineEdit_2->setObjectName("lineEdit_2");
         QFont font2;
+        font2.setFamilies({QString::fromUtf8("Segoe UI")});
         font2.setPointSize(12);
+        font2.setBold(false);
+        font2.setItalic(false);
         lineEdit_2->setFont(font2);
         lineEdit_2->setAutoFillBackground(false);
-        lineEdit_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        lineEdit_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"font: 12pt \"Segoe UI\";"));
         lineEdit_2->setInputMethodHints(Qt::InputMethodHint::ImhNone);
         lineEdit_2->setFrame(false);
-        lineEdit_2->setCursorPosition(24);
+        lineEdit_2->setCursorPosition(31);
         lineEdit_2->setAlignment(Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft);
         lineEdit_2->setReadOnly(true);
 
         verticalLayout_6->addWidget(lineEdit_2);
 
-        ShowError = new QTextBrowser(verticalWidget_5);
-        ShowError->setObjectName("ShowError");
+        ShowError_1 = new QTextBrowser(verticalWidget_5);
+        ShowError_1->setObjectName("ShowError_1");
+        ShowError_1->setStyleSheet(QString::fromUtf8("font: 16pt \"Segoe UI\";"));
 
-        verticalLayout_6->addWidget(ShowError);
+        verticalLayout_6->addWidget(ShowError_1);
+
+        lineEdit_5 = new QLineEdit(verticalWidget_5);
+        lineEdit_5->setObjectName("lineEdit_5");
+        lineEdit_5->setFont(font2);
+        lineEdit_5->setAutoFillBackground(false);
+        lineEdit_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"font: 12pt \"Segoe UI\";"));
+        lineEdit_5->setInputMethodHints(Qt::InputMethodHint::ImhNone);
+        lineEdit_5->setFrame(false);
+        lineEdit_5->setCursorPosition(28);
+        lineEdit_5->setAlignment(Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft);
+        lineEdit_5->setReadOnly(true);
+
+        verticalLayout_6->addWidget(lineEdit_5);
+
+        ShowError_2 = new QTextBrowser(verticalWidget_5);
+        ShowError_2->setObjectName("ShowError_2");
+        ShowError_2->setStyleSheet(QString::fromUtf8("font: 16pt \"Segoe UI\";"));
+
+        verticalLayout_6->addWidget(ShowError_2);
 
         Graph1 = new QPushButton(centralwidget);
         Graph1->setObjectName("Graph1");
@@ -213,7 +240,8 @@ public:
         AddFile1->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\270\320\272\321\200\320\265\320\277\320\270\321\202\321\214 \321\204\320\260\320\271\320\273", nullptr));
         AddFile2->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\270\320\272\321\200\320\265\320\277\320\270\321\202\321\214 \321\204\320\260\320\271\320\273", nullptr));
         lineEdit_4->setText(QCoreApplication::translate("MainWindow", "\320\230\320\267\320\274\320\265\321\200\320\265\320\275\320\270\321\217 \320\277\320\265\321\200\320\262\320\276\320\263\320\276 \320\277\320\260\321\200\320\260\320\274\320\265\321\202\321\200\320\260 (\320\260\320\261\321\201\321\206\320\270\321\201\321\201\320\260):", nullptr));
-        lineEdit_2->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\321\207\320\270\321\201\320\273\320\265\320\275\320\275\321\213\320\265 \320\277\320\276\320\263\321\200\320\265\321\210\320\275\320\276\321\201\321\202\320\270:", nullptr));
+        lineEdit_2->setText(QCoreApplication::translate("MainWindow", "\320\241\321\200\320\265\320\264\320\275\321\217\321\217 \320\277\320\276\320\263\321\200\320\265\321\210\320\275\320\276\321\201\321\202\321\214 \320\270\320\267\320\274\320\265\321\200\320\265\320\275\320\270\320\271: ", nullptr));
+        lineEdit_5->setText(QCoreApplication::translate("MainWindow", "\320\241\321\200\320\265\320\264\320\275\320\265\320\265 \320\267\320\275\320\260\321\207\320\265\320\275\320\270\320\265 \320\270\320\267\320\274\320\265\321\200\320\265\320\275\320\270\320\271: ", nullptr));
         Graph1->setText(QCoreApplication::translate("MainWindow", "\320\233\320\270\320\275\320\265\320\271\320\275\320\260\321\217 \321\200\320\265\320\263\321\200\320\265\321\201\321\201\320\270\321\217", nullptr));
         Error->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\321\207\320\270\321\201\320\273\320\270\321\202\321\214 \320\277\320\276\320\263\321\200\320\265\321\210\320\275\320\276\321\201\321\202\320\270", nullptr));
         lineEdit->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261\321\200\320\260\320\261\320\276\321\202\321\207\320\270\320\272 \320\273\320\260\320\261\320\276\321\200\320\260\321\202\320\276\321\200\320\275\321\213\321\205 \321\200\320\260\320\261\320\276\321\202", nullptr));

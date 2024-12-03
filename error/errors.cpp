@@ -53,8 +53,15 @@ int main()
     std::vector<double> measurements = {4.0, 4.1, 4.2, 3.9, 4.0};
     MeasurementError errorCalculator(measurements);
 
-    std::cout << "Среднее значение: " << errorCalculator.getMeanValue() << std::endl;
-    std::cout << "Средняя погрешность измерений: " << errorCalculator.getAvgDevMeasurements() << std::endl;
+
+    float average_value = errorCalculator.getMeanValue();
+    float average_measurement_error = errorCalculator.getAvgDevMeasurements();
+    
+
+    std::cout << "Средняя погрешность измерений: " << average_measurement_error << std::endl;
+    std::cout << "Среднее значение: " << average_value << std::endl;
+
+
 
     return 0;
 }

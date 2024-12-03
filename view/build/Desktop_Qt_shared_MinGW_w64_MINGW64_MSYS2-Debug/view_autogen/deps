@@ -5,6 +5,8 @@ view_autogen/timestamp: \
 	C:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/3.31.0/CMakeRCCompiler.cmake \
 	C:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/3.31.0/CMakeSystem.cmake \
 	C:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/view_autogen/moc_predefs.h \
+	C:/Users/user/Desktop/cpp_project/view/errors.cpp \
+	C:/Users/user/Desktop/cpp_project/view/errors.h \
 	C:/Users/user/Desktop/cpp_project/view/main.cpp \
 	C:/Users/user/Desktop/cpp_project/view/mainwindow.cpp \
 	C:/Users/user/Desktop/cpp_project/view/mainwindow.h \

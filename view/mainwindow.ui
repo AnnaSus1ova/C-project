@@ -201,26 +201,30 @@
       <widget class="QLineEdit" name="lineEdit_2">
        <property name="font">
         <font>
+         <family>Segoe UI</family>
          <pointsize>12</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
+        <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Segoe UI&quot;;</string>
        </property>
        <property name="inputMethodHints">
         <set>Qt::InputMethodHint::ImhNone</set>
        </property>
        <property name="text">
-        <string>Вычисленные погрешности:</string>
+        <string>Средняя погрешность измерений: </string>
        </property>
        <property name="frame">
         <bool>false</bool>
        </property>
        <property name="cursorPosition">
-        <number>24</number>
+        <number>31</number>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
@@ -231,7 +235,55 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextBrowser" name="ShowError"/>
+      <widget class="QTextBrowser" name="ShowError_1">
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_5">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>12</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Segoe UI&quot;;</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhNone</set>
+       </property>
+       <property name="text">
+        <string>Среднее значение измерений: </string>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
+       <property name="cursorPosition">
+        <number>28</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextBrowser" name="ShowError_2">
+       <property name="styleSheet">
+        <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

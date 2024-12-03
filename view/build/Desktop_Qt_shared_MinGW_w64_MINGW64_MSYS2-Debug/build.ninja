@@ -73,6 +73,14 @@ build CMakeFiles/view.dir/mainwindow.cpp.obj: CXX_COMPILER__view_unscanned_Debug
   OBJECT_DIR = CMakeFiles\view.dir
   OBJECT_FILE_DIR = CMakeFiles\view.dir
 
+build CMakeFiles/view.dir/errors.cpp.obj: CXX_COMPILER__view_unscanned_Debug C$:/Users/user/Desktop/cpp_project/view/errors.cpp || cmake_object_order_depends_target_view
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = CMakeFiles\view.dir\errors.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/view_autogen/include -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = CMakeFiles\view.dir
+  OBJECT_FILE_DIR = CMakeFiles\view.dir
+
 build CMakeFiles/view.dir/view_autogen/EWIEGA46WW/qrc_resource.cpp.obj: CXX_COMPILER__view_unscanned_Debug C$:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/view_autogen/EWIEGA46WW/qrc_resource.cpp || cmake_object_order_depends_target_view
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
   DEP_FILE = CMakeFiles\view.dir\view_autogen\EWIEGA46WW\qrc_resource.cpp.obj.d
@@ -89,7 +97,7 @@ build CMakeFiles/view.dir/view_autogen/EWIEGA46WW/qrc_resource.cpp.obj: CXX_COMP
 #############################################
 # Link the executable view.exe
 
-build view.exe: CXX_EXECUTABLE_LINKER__view_Debug CMakeFiles/view.dir/view_autogen/mocs_compilation.cpp.obj CMakeFiles/view.dir/main.cpp.obj CMakeFiles/view.dir/mainwindow.cpp.obj CMakeFiles/view.dir/view_autogen/EWIEGA46WW/qrc_resource.cpp.obj | C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a C$:/msys64/mingw64/lib/libQt6EntryPoint.a || view_autogen
+build view.exe: CXX_EXECUTABLE_LINKER__view_Debug CMakeFiles/view.dir/view_autogen/mocs_compilation.cpp.obj CMakeFiles/view.dir/main.cpp.obj CMakeFiles/view.dir/mainwindow.cpp.obj CMakeFiles/view.dir/errors.cpp.obj CMakeFiles/view.dir/view_autogen/EWIEGA46WW/qrc_resource.cpp.obj | C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a C$:/msys64/mingw64/lib/libQt6EntryPoint.a || view_autogen
   FLAGS = -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -lmpr  -luserenv  -lmingw32  C:/msys64/mingw64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
