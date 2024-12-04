@@ -49,7 +49,7 @@
 
     float MeasurementError::average_measurement_error()
     {
-        std::vector<double> measurements = {4.0, 4.1, 4.2, 3.9, 4.0};
+        std::vector<double> measurements = {4.0, 4.1, 4.2, 3.9, 1114.0};
         MeasurementError errorCalculator(measurements);
 
         float average_measurement_error = errorCalculator.getAvgDevMeasurements();

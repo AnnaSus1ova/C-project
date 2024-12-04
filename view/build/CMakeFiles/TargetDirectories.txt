@@ -1,0 +1,9 @@
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/view.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/edit_cache.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/list_install_components.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/install.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/install/local.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/install/strip.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/view_autogen_timestamp_deps.dir
+C:/Users/Nataly/Desktop/cpp_project/view/build/CMakeFiles/view_autogen.dir

@@ -13,6 +13,19 @@ MainWindow::MainWindow(QWidget *parent)
     ui->picture->setPixmap(pix);
 
 
+
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::on_Error_clicked()
+{
+    ui->ShowError_1->clear();
+    ui->ShowError_2->clear();
+
     MeasurementError AV{std::vector<double> (5)};
     MeasurementError AME{std::vector<double> (5)};
 
@@ -23,7 +36,3 @@ MainWindow::MainWindow(QWidget *parent)
     ui->ShowError_2->insertPlainText(QString(AVString));
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}

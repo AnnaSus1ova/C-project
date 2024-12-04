@@ -1,0 +1,16 @@
+# ninja log v6
+11	181	7549622410232606	C:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/view_autogen/mocs_compilation.cpp	72addb05c212206b
+11	181	7549622410232606	view_autogen/include/ui_mainwindow.h	72addb05c212206b
+148	759	7549602121016662	CMakeFiles/view.dir/errors.cpp.obj	8fcfb3f48c6a5620
+11	181	7549622410232606	view_autogen/mocs_compilation.cpp	72addb05c212206b
+11	181	7549622410232606	C:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/view_autogen/include/ui_mainwindow.h	72addb05c212206b
+11	181	7549622410232606	C:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/view_autogen/timestamp	72addb05c212206b
+182	2582	7549622411940563	CMakeFiles/view.dir/mainwindow.cpp.obj	c0aec39e610c96c4
+626	748	7549536961839345	C:/Users/user/Desktop/cpp_project/view/build/Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/view_autogen/EWIEGA46WW/qrc_resource.cpp	b81378bc0f9645da
+755	2413	7549536961999398	CMakeFiles/view.dir/main.cpp.obj	226e55312776eba5
+626	748	7549536961839345	view_autogen/EWIEGA46WW/qrc_resource.cpp	b81378bc0f9645da
+5	386	7549626151233549	build.ninja	c25dcbace4337ff1
+2583	2758	7549622435942350	view.exe	a882986194ba78d5
+781	1215	7549536962259458	CMakeFiles/view.dir/view_autogen/EWIEGA46WW/qrc_resource.cpp.obj	53f3581be275f2a6
+11	181	7549622410232606	view_autogen/timestamp	72addb05c212206b
+748	2425	7549536961929366	CMakeFiles/view.dir/view_autogen/mocs_compilation.cpp.obj	e3a155207705d59c
