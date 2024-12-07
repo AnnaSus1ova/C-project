@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include <QPixmap>
 #include "errors.h"
+#include "secdialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,8 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->picture->setPixmap(pix);
 
-
-
 }
 
 MainWindow::~MainWindow()
@@ -23,16 +22,25 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Error_clicked()
 {
-    ui->ShowError_1->clear();
-    ui->ShowError_2->clear();
+    //ui->ShowError_1->clear();
+    //ui->ShowError_2->clear();
 
-    MeasurementError AV{std::vector<double> (5)};
-    MeasurementError AME{std::vector<double> (5)};
+    //MeasurementError AV{std::vector<double> (5)};
+    //MeasurementError AME{std::vector<double> (5)};
 
-    QString AMEString = QString::number(AME.average_measurement_error());
-    ui->ShowError_1->insertPlainText(QString(AMEString));
+    //QString AMEString = QString::number(AME.average_measurement_error());
+    //ui->ShowError_1->insertPlainText(QString(AMEString));
 
-    QString AVString = QString::number(AV.average_value());
-    ui->ShowError_2->insertPlainText(QString(AVString));
+    //QString AVString = QString::number(AV.average_value());
+    //ui->ShowError_2->insertPlainText(QString(AVString));
+}
+
+
+void MainWindow::on_question_clicked()
+{
+    SecDialog secdialog;
+    secdialog.setModal(true);
+    secdialog.exec();
+
 }
 

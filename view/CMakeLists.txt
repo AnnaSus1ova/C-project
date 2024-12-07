@@ -28,6 +28,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         errors.cpp
         errors.h
         README
+        secdialog.h secdialog.cpp secdialog.ui
+
 
 
     )

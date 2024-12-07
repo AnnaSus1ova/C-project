@@ -20,6 +20,8 @@ public:
 private slots:
     void on_Error_clicked();
 
+    void on_question_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
