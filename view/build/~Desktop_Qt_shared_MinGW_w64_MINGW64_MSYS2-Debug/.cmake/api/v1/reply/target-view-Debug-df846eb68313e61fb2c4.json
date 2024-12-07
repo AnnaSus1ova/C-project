@@ -51,7 +51,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 23,
+				"line" : 27,
 				"parent" : 0
 			},
 			{
@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 71,
+				"line" : 75,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 54,
+				"line" : 58,
 				"parent" : 0
 			},
 			{
@@ -373,9 +373,11 @@
 				0,
 				1,
 				2,
-				6,
+				5,
+				7,
 				10,
-				15
+				14,
+				19
 			]
 		}
 	],
@@ -496,9 +498,11 @@
 				0,
 				1,
 				2,
-				6,
+				5,
+				7,
 				10,
-				15
+				14,
+				19
 			]
 		},
 		{
@@ -506,10 +510,12 @@
 			"sourceIndexes" : 
 			[
 				3,
-				7,
-				9,
-				12,
-				13
+				6,
+				8,
+				11,
+				13,
+				16,
+				17
 			]
 		},
 		{
@@ -517,18 +523,18 @@
 			"sourceIndexes" : 
 			[
 				4,
-				5,
-				8,
-				11,
-				14
+				9,
+				12,
+				15,
+				18
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				16,
-				17
+				20,
+				21
 			]
 		}
 	],
@@ -562,6 +568,28 @@
 			"backtrace" : 4,
 			"path" : "mainwindow.ui",
 			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Data.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Data.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "Vector.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "Vector.h",
+			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,

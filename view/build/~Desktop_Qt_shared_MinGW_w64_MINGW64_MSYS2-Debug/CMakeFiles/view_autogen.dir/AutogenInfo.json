@@ -267,6 +267,18 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/user/Desktop/cpp_project/view/Data.h",
+			"MU",
+			"EWIEGA46WW/moc_Data.cpp",
+			null
+		],
+		[
+			"C:/Users/user/Desktop/cpp_project/view/Vector.h",
+			"MU",
+			"EWIEGA46WW/moc_Vector.cpp",
+			null
+		],
+		[
 			"C:/Users/user/Desktop/cpp_project/view/errors.h",
 			"MU",
 			"EWIEGA46WW/moc_errors.cpp",
@@ -358,6 +370,8 @@
 	"SETTINGS_FILE" : "C:/Users/user/Desktop/cpp_project/view/build/~Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/view_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Users/user/Desktop/cpp_project/view/Data.cpp", "MU", null ],
+		[ "C:/Users/user/Desktop/cpp_project/view/Vector.cpp", "MU", null ],
 		[ "C:/Users/user/Desktop/cpp_project/view/errors.cpp", "MU", null ],
 		[ "C:/Users/user/Desktop/cpp_project/view/main.cpp", "MU", null ],
 		[ "C:/Users/user/Desktop/cpp_project/view/mainwindow.cpp", "MU", null ],

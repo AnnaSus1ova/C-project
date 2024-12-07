@@ -1,5 +1,9 @@
 view_autogen/timestamp: \
 	C:/Users/user/Desktop/cpp_project/view/CMakeLists.txt \
+	C:/Users/user/Desktop/cpp_project/view/Data.cpp \
+	C:/Users/user/Desktop/cpp_project/view/Data.h \
+	C:/Users/user/Desktop/cpp_project/view/Vector.cpp \
+	C:/Users/user/Desktop/cpp_project/view/Vector.h \
 	C:/Users/user/Desktop/cpp_project/view/build/~Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/user/Desktop/cpp_project/view/build/~Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/3.31.0/CMakeCXXCompiler.cmake \
 	C:/Users/user/Desktop/cpp_project/view/build/~Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/3.31.0/CMakeRCCompiler.cmake \
