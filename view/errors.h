@@ -25,9 +25,13 @@ public:
 
     double getAvgDevMeasurements() const;
 
-    float average_value();
+    float average_value_abscissa();
 
-    float average_measurement_error();
+    float average_measurement_error_abscissa();
+
+    float average_value_ordinate();
+
+    float average_measurement_error_ordinate();
 };
 
 

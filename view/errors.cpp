@@ -2,6 +2,8 @@
 #include <vector>
 #include <cmath>
 #include "errors.h"
+#include "Vector.h"
+#include "Data.h"
 
 
     double MeasurementError::calculateMean()
@@ -35,11 +37,9 @@
     }
 
 
-    float MeasurementError::average_value()
+    float MeasurementError::average_value_abscissa()
     {
-        std::vector<double> measurements = {4.0, 4.1, 4.2, 3.9, 4.0};
-        MeasurementError errorCalculator(measurements);
-
+        MeasurementError errorCalculator(Data.get_abscissa());
 
         float average_value = errorCalculator.getMeanValue();
 
@@ -47,10 +47,29 @@
 
     }
 
-    float MeasurementError::average_measurement_error()
+    float MeasurementError::average_measurement_error_abscissa()
     {
-        std::vector<double> measurements = {4.0, 4.1, 4.2, 3.9, 1114.0};
-        MeasurementError errorCalculator(measurements);
+        MeasurementError errorCalculator(Data.get_abscissa());
+
+        float average_measurement_error = errorCalculator.getAvgDevMeasurements();
+
+        return average_measurement_error;
+    }
+
+    float MeasurementError::average_value_ordinate()
+    {
+        Vector_2d measurements;
+        MeasurementError errorCalculator(Data.get_ordinate());
+
+        float average_value = errorCalculator.getMeanValue();
+
+        return average_value;
+
+    }
+
+    float MeasurementError::average_measurement_error_ordinate()
+    {
+        MeasurementError errorCalculator(Data.get_ordinate());
 
         float average_measurement_error = errorCalculator.getAvgDevMeasurements();
 
