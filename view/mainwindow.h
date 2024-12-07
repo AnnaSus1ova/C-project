@@ -20,6 +20,10 @@ public:
 private slots:
     void on_Error_clicked();
 
+    void on_AddFile1_clicked();
+
+    void on_AddFile2_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
