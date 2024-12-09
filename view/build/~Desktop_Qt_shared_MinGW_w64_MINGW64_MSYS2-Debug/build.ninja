@@ -218,7 +218,7 @@ build view_autogen/timestamp view_autogen/mocs_compilation.cpp view_autogen/incl
 #############################################
 # Custom command for view_autogen\EWIEGA46WW\qrc_resource.cpp
 
-build view_autogen/EWIEGA46WW/qrc_resource.cpp | ${cmake_ninja_workdir}view_autogen/EWIEGA46WW/qrc_resource.cpp: CUSTOM_COMMAND C$:/Users/user/Desktop/cpp_project/view/resource.qrc CMakeFiles/view_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json C$:/Users/user/Desktop/cpp_project/view/img/my-background.png C$:/Users/user/Desktop/cpp_project/view/question.jpg C$:/msys64/mingw64/share/qt6/bin/rcc.exe C$:/msys64/mingw64/share/qt6/bin/rcc.exe || view_autogen
+build view_autogen/EWIEGA46WW/qrc_resource.cpp | ${cmake_ninja_workdir}view_autogen/EWIEGA46WW/qrc_resource.cpp: CUSTOM_COMMAND C$:/Users/user/Desktop/cpp_project/view/resource.qrc CMakeFiles/view_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json C$:/Users/user/Desktop/cpp_project/view/img/my-background.png C$:/Users/user/Desktop/cpp_project/view/back.png C$:/Users/user/Desktop/cpp_project/view/bgrd.png C$:/Users/user/Desktop/cpp_project/view/logo.png C$:/Users/user/Desktop/cpp_project/view/logo2.png C$:/Users/user/Desktop/cpp_project/view/question.jpg C$:/msys64/mingw64/share/qt6/bin/rcc.exe C$:/msys64/mingw64/share/qt6/bin/rcc.exe || view_autogen
   COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\user\Desktop\cpp_project\view\build\~Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug && C:\msys64\mingw64\bin\cmake.exe -E cmake_autorcc C:/Users/user/Desktop/cpp_project/view/build/~Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/view_autogen.dir/AutoRcc_resource_EWIEGA46WW_Info.json Debug"
   DESC = Automatic RCC for resource.qrc
   restat = 1

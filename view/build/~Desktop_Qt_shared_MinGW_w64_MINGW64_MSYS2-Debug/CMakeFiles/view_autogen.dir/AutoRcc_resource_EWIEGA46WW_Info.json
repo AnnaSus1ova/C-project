@@ -10,6 +10,10 @@
 	"INPUTS" : 
 	[
 		"C:/Users/user/Desktop/cpp_project/view/img/my-background.png",
+		"C:/Users/user/Desktop/cpp_project/view/back.png",
+		"C:/Users/user/Desktop/cpp_project/view/bgrd.png",
+		"C:/Users/user/Desktop/cpp_project/view/logo.png",
+		"C:/Users/user/Desktop/cpp_project/view/logo2.png",
 		"C:/Users/user/Desktop/cpp_project/view/question.jpg"
 	],
 	"LOCK_FILE" : "C:/Users/user/Desktop/cpp_project/view/build/~Desktop_Qt_shared_MinGW_w64_MINGW64_MSYS2-Debug/CMakeFiles/view_autogen.dir/AutoRcc_resource_EWIEGA46WW_Lock.lock",
