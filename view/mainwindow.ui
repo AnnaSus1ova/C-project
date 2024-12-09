@@ -202,7 +202,7 @@
        <property name="font">
         <font>
          <family>Segoe UI</family>
-         <pointsize>12</pointsize>
+         <pointsize>11</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -212,19 +212,19 @@
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;Segoe UI&quot;;</string>
+font: 10.5pt &quot;Segoe UI&quot;;</string>
        </property>
        <property name="inputMethodHints">
         <set>Qt::InputMethodHint::ImhNone</set>
        </property>
        <property name="text">
-        <string>Средняя погрешность измерений: </string>
+        <string>Среднее значение измерений (x, y): </string>
        </property>
        <property name="frame">
         <bool>false</bool>
        </property>
        <property name="cursorPosition">
-        <number>31</number>
+        <number>35</number>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
@@ -249,7 +249,7 @@ font: 12pt &quot;Segoe UI&quot;;</string>
        <property name="font">
         <font>
          <family>Segoe UI</family>
-         <pointsize>12</pointsize>
+         <pointsize>11</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -259,19 +259,19 @@ font: 12pt &quot;Segoe UI&quot;;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;Segoe UI&quot;;</string>
+font: 10.5pt &quot;Segoe UI&quot;;</string>
        </property>
        <property name="inputMethodHints">
         <set>Qt::InputMethodHint::ImhNone</set>
        </property>
        <property name="text">
-        <string>Среднее значение измерений: </string>
+        <string>Средняя погрешность измерений (x, y): </string>
        </property>
        <property name="frame">
         <bool>false</bool>
        </property>
        <property name="cursorPosition">
-        <number>28</number>
+        <number>38</number>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
@@ -450,7 +450,7 @@ font: 12pt &quot;Segoe UI&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>945</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

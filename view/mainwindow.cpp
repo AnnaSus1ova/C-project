@@ -31,17 +31,27 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Error_clicked()
 {
-    //ui->ShowError_1->clear();
-    //ui->ShowError_2->clear();
+    ui->textBrowser->clear();
+    ui->textBrowser_2->clear();
+    ui->textBrowser_3->clear();
+    ui->textBrowser_4->clear();
 
-    //MeasurementError AV{std::vector<double> (5)};
-    //MeasurementError AME{std::vector<double> (5)};
+    MeasurementError AV_abs{std::vector<double> (5)};
+    MeasurementError AME_abs{std::vector<double> (5)};
+    MeasurementError AV_ord{std::vector<double> (5)};
+    MeasurementError AME_ord{std::vector<double> (5)};
 
-    //QString AMEString = QString::number(AME.average_measurement_error());
-    //ui->ShowError_1->insertPlainText(QString(AMEString));
+    QString AMEString_abs = QString::number(AME_abs.average_measurement_error_abscissa());
+    ui->textBrowser_3->insertPlainText(QString(AMEString_abs));
 
-    //QString AVString = QString::number(AV.average_value());
-    //ui->ShowError_2->insertPlainText(QString(AVString));
+    QString AVString_abs = QString::number(AV_abs.average_value_abscissa());
+    ui->textBrowser_2->insertPlainText(QString(AVString_abs));
+
+    QString AMEString_ord = QString::number(AME_ord.average_measurement_error_ordinate());
+    ui->textBrowser_4->insertPlainText(QString(AMEString_ord));
+
+    QString AVString_ord = QString::number(AV_ord.average_value_ordinate());
+    ui->textBrowser->insertPlainText(QString(AVString_ord));
 }
 
 
