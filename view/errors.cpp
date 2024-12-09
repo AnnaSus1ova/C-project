@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 #include <cmath>
 #include "errors.h"
@@ -37,41 +36,41 @@
     }
 
 
-    float MeasurementError::average_value_abscissa()
+    double MeasurementError::average_value_abscissa()
     {
         MeasurementError errorCalculator(Data.get_abscissa());
 
-        float average_value = errorCalculator.getMeanValue();
+        double average_value = errorCalculator.getMeanValue();
 
         return average_value;
 
     }
 
-    float MeasurementError::average_measurement_error_abscissa()
+    double MeasurementError::average_measurement_error_abscissa()
     {
         MeasurementError errorCalculator(Data.get_abscissa());
 
-        float average_measurement_error = errorCalculator.getAvgDevMeasurements();
+        double average_measurement_error = errorCalculator.getAvgDevMeasurements();
 
         return average_measurement_error;
     }
 
-    float MeasurementError::average_value_ordinate()
+    double MeasurementError::average_value_ordinate()
     {
         Vector_2d measurements;
         MeasurementError errorCalculator(Data.get_ordinate());
 
-        float average_value = errorCalculator.getMeanValue();
+        double average_value = errorCalculator.getMeanValue();
 
         return average_value;
 
     }
 
-    float MeasurementError::average_measurement_error_ordinate()
+    double MeasurementError::average_measurement_error_ordinate()
     {
         MeasurementError errorCalculator(Data.get_ordinate());
 
-        float average_measurement_error = errorCalculator.getAvgDevMeasurements();
+        double average_measurement_error = errorCalculator.getAvgDevMeasurements();
 
         return average_measurement_error;
     }
