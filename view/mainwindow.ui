@@ -66,7 +66,7 @@
         <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="inputMethodHints">
-        <set>Qt::InputMethodHint::ImhNone</set>
+        <set>Qt::InputMethodHint::ImhPreferNumbers</set>
        </property>
        <property name="text">
         <string>Измерения второго параметра (ордината):</string>
@@ -86,7 +86,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="Ordinate"/>
+      <widget class="QPlainTextEdit" name="Ordinate">
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhMultiLine</set>
+       </property>
+       <property name="placeholderText">
+        <string>Введите числа через пробел</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -190,7 +197,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="Abscissa"/>
+      <widget class="QPlainTextEdit" name="Abscissa">
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhMultiLine</set>
+       </property>
+       <property name="placeholderText">
+        <string>Введите числа через пробел</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
