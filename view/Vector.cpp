@@ -4,18 +4,6 @@
 
 Vector_2d::Vector_2d(){}
 
-Vector_2d::Vector_2d(std::vector<double> _abscissa, std::vector<double> _ordinate){
-    try{
-        if (_abscissa.size() != _ordinate.size())
-            throw std::invalid_argument("Different number of abscissas and ordinates");
-        abscissa = _abscissa;
-        ordinate = _ordinate;
-    }
-    catch (std::invalid_argument){
-        std::cout << "Different number of abscissas and ordinates" << std::endl;
-    }
-}
-
 Vector_2d::Vector_2d(const Vector_2d& rhs) {
 	abscissa = rhs.abscissa;
 	ordinate = rhs.ordinate;

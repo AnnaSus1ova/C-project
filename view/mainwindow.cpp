@@ -10,6 +10,9 @@
 #include "Data.h"
 #include <iostream>
 #include "secdialog.h"
+#include "wrong_input.h"
+#include <QFile>
+#include <QByteArray>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -77,34 +80,64 @@ void MainWindow::on_AddFile1_clicked()
 {
     QString text1 = ui->Abscissa->toPlainText();
     if (text1.isEmpty()){
-        text1 = QFileDialog::getOpenFileName(this, tr("Выберите файл с измерениями абсцисс"), QString(), tr("Text files (*.txt)"));
+        QString filename1 = QFileDialog::getOpenFileName(this, tr("Выберите файл с измерениями абсцисс"),
+                                                         QString(),
+                                                         tr("Text files (*.txt)"));
+        QFile file(filename1);
+        if (file.open(QIODevice::ReadOnly)) {
+            QByteArray data1 = file.readAll();
+            text1 = QString::fromUtf8(data1);
+            file.close();
+        }
         if (text1.isEmpty()) return;
     }
-    std::vector<std::string> absci_str = customSplit(text1.toUtf8().constData(), " ");
-    std::vector<double> absci_d;
-    std::transform(absci_str.begin(), absci_str.end(), std::back_inserter(absci_d),
-                   [](const std::string& str) { return std::stod(str); });
-    for (std::vector<double>::iterator i = absci_d.begin(); i != absci_d.end(); ++i)
-        std::cout << *i;
-    Data.set_abscissa(absci_d);
+    try{
+        std::vector<std::string> absci_str = customSplit(text1.toUtf8().constData(), " ");
+        std::vector<double> absci_d;
+        std::transform(absci_str.begin(), absci_str.end(), std::back_inserter(absci_d),
+                       [](const std::string& str) { return std::stod(str); });
+        for (std::vector<double>::iterator i = absci_d.begin(); i != absci_d.end(); ++i)
+            std::cout << *i;
+        Data.set_abscissa(absci_d);
+    }
+    catch(...){
+        ui->Abscissa->clear();
+        WrongInput wrong_input;
+        wrong_input.setModal(true);
+        wrong_input.exec();
+    }
 }
 
 void MainWindow::on_AddFile2_clicked()
 {
     QString text2 = ui->Ordinate->toPlainText();
     if (text2.isEmpty()){
-        text2 = QFileDialog::getOpenFileName(this, tr("Выберите файл с измерениями ординат"),
-                                             QString(),
-                                             tr("Text files (*.txt)"));
+        QString filename2 = QFileDialog::getOpenFileName(this, tr("Выберите файл с измерениями ординат"),
+                                                         QString(),
+                                                         tr("Text files (*.txt)"));
+        QFile file(filename2);
+        if (file.open(QIODevice::ReadOnly)) {
+            QByteArray data2 = file.readAll();
+            text2 = QString::fromUtf8(data2);
+            file.close();
+        }
         if (text2.isEmpty()) return;
     }
-    std::vector<std::string> ordin_str = customSplit(text2.toUtf8().constData(), " ");
-    std::vector<double> ordin_d;
-    std::transform(ordin_str.begin(), ordin_str.end(), std::back_inserter(ordin_d),
-                   [](const std::string& str) { return std::stod(str); });
-    for (std::vector<double>::iterator i = ordin_d.begin(); i != ordin_d.end(); ++i)
-        std::cout << *i;
-    Data.set_ordinate(ordin_d);
+    try{
+        std::vector<std::string> ordin_str = customSplit(text2.toUtf8().constData(), " ");
+        std::vector<double> ordin_d;
+        std::transform(ordin_str.begin(), ordin_str.end(), std::back_inserter(ordin_d),
+                       [](const std::string& str) { return std::stod(str); });
+        for (std::vector<double>::iterator i = ordin_d.begin(); i != ordin_d.end(); ++i)
+            std::cout << *i;
+        Data.set_ordinate(ordin_d);
+    }
+    catch(...){
+        ui->Ordinate->clear();
+        WrongInput wrong_input;
+        wrong_input.setModal(true);
+        wrong_input.exec();
+    }
 }
 
 void MainWindow::on_question_clicked()

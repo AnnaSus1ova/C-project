@@ -33,6 +33,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         errors.h
         README
         secdialog.h secdialog.cpp secdialog.ui
+        wrong_input.ui
+        wrong_input.cpp
+        wrong_input.h
 
 
 
