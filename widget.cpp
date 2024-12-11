@@ -16,11 +16,6 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::on_pushButton_clicked()
-{
-    // Сделать скачивание файла
-}
-
 
 void Widget::on_checkBox_2_stateChanged(int arg1)
 {
@@ -53,6 +48,7 @@ void Widget::makePlot()
     std::vector<double> abscissa_values = {1, 2, 3, 4, -5}; // test values then delete, use code under
     std::vector<double> ordinate_values = {8, -2, 1.2, 8, 15}; //then delete, use code under
     const size_t count_of_points = abscissa_values.size();
+    // QVector<QCPGraphData> timeData(count_of_points);
 
 
     QVector<double> x(count_of_points), y(count_of_points); // initialize with entries 0..100
@@ -60,11 +56,16 @@ void Widget::makePlot()
     {
         x[i] = abscissa_values[i];
         y[i] = ordinate_values[i];
+        // timeData[i].key = abscissa_values[i] + 1;
+        // timeData[i].value = ordinate_values[i] + 1;
     }
 
     // create graph and assign data to it:
     ui->chartwidget->addGraph();
     ui->chartwidget->graph(0)->setData(x, y);
+
+
+    // ui->chartwidget->graph()->data()->set(timeData);
 
     // give the axes some labels:
     ui->chartwidget->xAxis->setLabel("x");
@@ -82,5 +83,21 @@ void Widget::makePlot()
     ui->chartwidget->xAxis->setRange(x_min - 0.1 * (x_max-x_min), x_max + 0.1 * (x_max-x_min));
     ui->chartwidget->yAxis->setRange(y_min - 0.1 * (y_max-y_min), y_max + 0.1 * (y_max-y_min));
     ui->chartwidget->replot();
+}
+
+
+
+void Widget::on_downloadButton_clicked()
+{
+    QString dirName = QFileDialog::getSaveFileName(this, "Choose location");
+    QFile file(dirName);
+
+    if (!file.open(QIODevice::WriteOnly))
+        {
+            qDebug() << file.errorString();
+        } else {
+            ui->chartwidget->savePng(dirName);
+        }
+
 }
 

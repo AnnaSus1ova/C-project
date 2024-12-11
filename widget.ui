@@ -38,9 +38,9 @@
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="downloadButton">
       <property name="text">
-       <string>Скачать график</string>
+       <string>Скачать</string>
       </property>
      </widget>
     </item>
@@ -66,22 +66,5 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>pushButton</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>72</x>
-     <y>349</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>71</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
