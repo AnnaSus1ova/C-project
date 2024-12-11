@@ -3,6 +3,12 @@
 
 #include <QWidget>
 
+#include "Data.h"
+#include <vector>
+#include <tuple>
+#include <algorithm>
+// #include <lineral-regression.h> need to change file
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
