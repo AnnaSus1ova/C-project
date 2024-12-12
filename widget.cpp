@@ -45,8 +45,8 @@ void Widget::makePlot()
     // std::vector<double> abscissa_values = Data.get_abscissa();
     // std::vector<double> ordinate_values = Data.get_ordinate();
 
-    std::vector<double> abscissa_values = {1, 2, 3, 4, -5}; // test values then delete, use code under
-    std::vector<double> ordinate_values = {8, -2, 1.2, 8, 15}; //then delete, use code under
+    std::vector<double> ordinate_values = {3, 6, 8, 11, 13, 16, 19, 21}; // test values then delete, use code under
+    std::vector<double> abscissa_values = {3, 6, 9, 12, 15, 18, 21, 24}; //then delete, use code under
     const size_t count_of_points = abscissa_values.size();
     // QVector<QCPGraphData> timeData(count_of_points);
 
@@ -77,7 +77,33 @@ void Widget::makePlot()
     double y_min = *std::min_element(ordinate_values.begin(), ordinate_values.end());
     double y_max = *std::max_element(ordinate_values.begin(), ordinate_values.end());
 
+    // ЛИНЕЙНЫЙ ГРАФИК
     // std::fit(abscissa_values, ordinate_values)
+    double k = 0.86;
+    double b = 0.50;
+    QVector<double> x1 = {x_min, x_max};
+    QVector<double> y1 = {x_min * k + b, x_max * k + b};
+
+    // регрессия
+    QCPGraph *graph1 = ui->chartwidget->addGraph();
+    graph1->setData(x1, y1);
+    graph1->setPen(QPen(QColor(120, 120, 120), 2));
+
+    // точки графика
+    ui->chartwidget->addGraph(ui->chartwidget->yAxis2, ui->chartwidget->xAxis2);
+    ui->chartwidget->graph(0)->setPen(QColor(255, 0, 0, 255));
+    ui->chartwidget->graph(0)->setLineStyle(QCPGraph::lsNone);
+    ui->chartwidget->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
+    // ui->chartwidget->graph(0)->setName("Some random data around\na quadratic function");
+    ui->chartwidget->graph(0)->setData(x, y);
+
+    // QCPGraph *points = ui->chartwidget->addGraph();
+    // points->setData(x, y);
+    // points->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, QPen(Qt::black, 1.5), QBrush(Qt::white), 9));
+    // points->brush();
+    // points->setPen(QPen(QColor(120, 120, 120), 2));
+
+
 
     // set axes ranges, so we see all data:
     ui->chartwidget->xAxis->setRange(x_min - 0.1 * (x_max-x_min), x_max + 0.1 * (x_max-x_min));
