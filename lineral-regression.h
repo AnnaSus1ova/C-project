@@ -10,11 +10,13 @@ private:
 
 public:
 
-
     LinearRegression() = default;
 
     // Конструктор с параметрами
     LinearRegression(const std::vector<double>& x, const std::vector<double>& y);
+    
+    ~LinearRegression();
+
 
     // Метод для подгонки модели
     //void fit(const std::vector<double>& x, const std::vector<double>& y);
