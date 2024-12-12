@@ -42,34 +42,32 @@ auto find_range(std::vector<double> &values) {
 void Widget::makePlot()
 {
 
-    // std::vector<double> abscissa_values = Data.get_abscissa();
+    // std::vector<double> abscissa_values = Data.get_abscissa();abscissa_values
     // std::vector<double> ordinate_values = Data.get_ordinate();
 
-    std::vector<double> ordinate_values = {3, 6, 8, 11, 13, 16, 19, 21}; // test values then delete, use code under
+    std::vector<double> ordinate_values = {3, 6, 8, 11, 13, 16, 19, 21}; // test values
     std::vector<double> abscissa_values = {3, 6, 9, 12, 15, 18, 21, 24}; //then delete, use code under
     const size_t count_of_points = abscissa_values.size();
-    // QVector<QCPGraphData> timeData(count_of_points);
 
 
-    QVector<double> x(count_of_points), y(count_of_points); // initialize with entries 0..100
+    QVector<double> y_err(count_of_points);
+    double err_koef = 0.5; // replace to calculation of it
+    QCPErrorBars *errorBars = new QCPErrorBars(ui->chartwidget->xAxis, ui->chartwidget->yAxis);
+
+
+    QVector<double> x(count_of_points), y(count_of_points);
     for (int i=0; i<count_of_points; ++i)
     {
         x[i] = abscissa_values[i];
         y[i] = ordinate_values[i];
-        // timeData[i].key = abscissa_values[i] + 1;
-        // timeData[i].value = ordinate_values[i] + 1;
+        y_err[i] = err_koef;
     }
 
-    // create graph and assign data to it:
-    ui->chartwidget->addGraph();
-    ui->chartwidget->graph(0)->setData(x, y);
-
-
-    // ui->chartwidget->graph()->data()->set(timeData);
 
     // give the axes some labels:
     ui->chartwidget->xAxis->setLabel("x");
     ui->chartwidget->yAxis->setLabel("y");
+
 
     // find ranges of values
     double x_min = *std::min_element(abscissa_values.begin(), abscissa_values.end());
@@ -77,32 +75,29 @@ void Widget::makePlot()
     double y_min = *std::min_element(ordinate_values.begin(), ordinate_values.end());
     double y_max = *std::max_element(ordinate_values.begin(), ordinate_values.end());
 
+
+    // точки графика
+    ui->chartwidget->addGraph(ui->chartwidget->xAxis, ui->chartwidget->yAxis);
+    ui->chartwidget->graph(0)->setPen(QColor(255, 0, 0, 255));
+    ui->chartwidget->graph(0)->setLineStyle(QCPGraph::lsNone);
+    ui->chartwidget->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
+    ui->chartwidget->graph(0)->setData(x, y);
+    errorBars->setDataPlottable(ui->chartwidget->graph(0));
+    errorBars->setData(y_err);
+
+
     // ЛИНЕЙНЫЙ ГРАФИК
+    // подключиться к его расчету
     // std::fit(abscissa_values, ordinate_values)
     double k = 0.86;
     double b = 0.50;
     QVector<double> x1 = {x_min, x_max};
     QVector<double> y1 = {x_min * k + b, x_max * k + b};
 
-    // регрессия
-    QCPGraph *graph1 = ui->chartwidget->addGraph();
-    graph1->setData(x1, y1);
-    graph1->setPen(QPen(QColor(120, 120, 120), 2));
 
-    // точки графика
-    ui->chartwidget->addGraph(ui->chartwidget->yAxis2, ui->chartwidget->xAxis2);
-    ui->chartwidget->graph(0)->setPen(QColor(255, 0, 0, 255));
-    ui->chartwidget->graph(0)->setLineStyle(QCPGraph::lsNone);
-    ui->chartwidget->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
-    // ui->chartwidget->graph(0)->setName("Some random data around\na quadratic function");
-    ui->chartwidget->graph(0)->setData(x, y);
-
-    // QCPGraph *points = ui->chartwidget->addGraph();
-    // points->setData(x, y);
-    // points->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, QPen(Qt::black, 1.5), QBrush(Qt::white), 9));
-    // points->brush();
-    // points->setPen(QPen(QColor(120, 120, 120), 2));
-
+    ui->chartwidget->addGraph();
+    ui->chartwidget->graph(1)->setData(x1, y1);
+    ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
 
 
     // set axes ranges, so we see all data:
