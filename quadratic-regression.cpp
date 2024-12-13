@@ -55,9 +55,9 @@ QuadraticRegression::QuadraticRegression(const std::vector<double>& x, const std
     }
 
     // Коэффициенты квадратичной регрессии
-    c = B[0];
+    a = B[0];
     b = B[1];
-    a = B[2];
+    c = B[2];
 
     }
 
