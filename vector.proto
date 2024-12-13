@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Data {
+  repeated float abscissa = 1; 
+  repeated float ordinate = 2;
+}

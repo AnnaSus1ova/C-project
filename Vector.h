@@ -13,4 +13,6 @@ public:
     std::vector<double> get_ordinate();
     void set_abscissa(std::vector<double> _abscis);
     void set_ordinate(std::vector<double> _ordin);
+    void save_to_file(const std::string& filename) const;
+    void load_from_file(const std::string& filename);
 };
