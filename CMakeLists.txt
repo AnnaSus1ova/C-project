@@ -17,6 +17,16 @@ set(PROJECT_SOURCES
         widget.cpp
         widget.h
         widget.ui
+        quadratic-regression.cpp
+        quadratic-regression.h
+        lineral-regression.cpp
+        lineral-regression.h
+        Data.cpp
+        Data.h
+        Vector.cpp
+        Vector.h
+        errors.cpp
+        errors.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

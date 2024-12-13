@@ -4,10 +4,12 @@
 #include <QWidget>
 
 #include "Data.h"
+#include "quadratic-regression.h"
+#include "lineral-regression.h"
+#include "errors.h"
 #include <vector>
 #include <tuple>
 #include <algorithm>
-// #include <lineral-regression.h> need to change file
 #include <QFile>
 #include <QFileDialog>
 
@@ -26,8 +28,6 @@ public:
     ~Widget();
 
 private slots:
-    // void on_pushButton_clicked();
-
     void on_checkBox_2_stateChanged(int arg1);
 
     void on_checkBox_checkStateChanged(const Qt::CheckState &arg1);

@@ -1,6 +1,6 @@
 #include "widget.h"
 #include "./ui_widget.h"
-
+#include "stdio.h"
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -39,19 +39,19 @@ auto find_range(std::vector<double> &values) {
     return res;
 }
 
+
+
 void Widget::makePlot()
 {
 
-    // std::vector<double> abscissa_values = Data.get_abscissa();abscissa_values
-    // std::vector<double> ordinate_values = Data.get_ordinate();
-
-    std::vector<double> ordinate_values = {3, 6, 8, 11, 13, 16, 19, 21}; // test values
-    std::vector<double> abscissa_values = {3, 6, 9, 12, 15, 18, 21, 24}; //then delete, use code under
+    std::vector<double> abscissa_values = Data.get_abscissa();
+    std::vector<double> ordinate_values = Data.get_ordinate();
     const size_t count_of_points = abscissa_values.size();
 
 
+    MeasurementError errors(ordinate_values);
     QVector<double> y_err(count_of_points);
-    double err_koef = 0.5; // replace to calculation of it
+    double err_koef = errors.average_measurement_error_ordinate();
     QCPErrorBars *errorBars = new QCPErrorBars(ui->chartwidget->xAxis, ui->chartwidget->yAxis);
 
 
@@ -86,18 +86,34 @@ void Widget::makePlot()
     errorBars->setData(y_err);
 
 
-    // ЛИНЕЙНЫЙ ГРАФИК
-    // подключиться к его расчету
-    // std::fit(abscissa_values, ordinate_values)
-    double k = 0.86;
-    double b = 0.50;
+    // Линейная регрессия
+    LinearRegression regression(abscissa_values, ordinate_values);
+    double k = regression.getK();
+    double b = regression.getB();
     QVector<double> x1 = {x_min, x_max};
     QVector<double> y1 = {x_min * k + b, x_max * k + b};
+
+
+    // // Квадратичная регрессия
+    // QuadraticRegression regression(abscissa_values, ordinate_values);
+    // double a = regression.getA();
+    // double b = regression.getB();
+    // double c = regression.getC();
+
+    // QVector<double> x1(512), y1(512);
+    // for (int i=0; i < 512 ; ++i)
+    // {
+    //     x1[i] = x_min + (x_max - x_min) * i / 512;
+    //     y1[i] = a * x1[i] * x1[i] + b * x1[i] + c;
+    // }
 
 
     ui->chartwidget->addGraph();
     ui->chartwidget->graph(1)->setData(x1, y1);
     ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
+
+    std::printf("k=%.2lf b=%.2lf", k, b);
+    std::printf("error_ordinate=%.2lf error_abscissa=%.2lf", errors.average_measurement_error_ordinate(), errors.average_measurement_error_abscissa());
 
 
     // set axes ranges, so we see all data:
