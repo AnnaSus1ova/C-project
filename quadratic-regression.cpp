@@ -28,7 +28,7 @@ QuadraticRegression::QuadraticRegression(const std::vector<double>& x, const std
     double A[3][3] = {
         {sumX4, sumX3, sumX2},
         {sumX3, sumX2, sumX},
-        {sumX2, sumX, n}
+        {sumX2, sumX, n * 1.0}
     };
 
     double B[3] = {sumX2Y, sumXY, sumY};
