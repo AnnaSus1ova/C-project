@@ -50,9 +50,12 @@ void Widget::makePlot()
 
 
     MeasurementError errors(ordinate_values);
+    QVector<double> x_err(count_of_points);
     QVector<double> y_err(count_of_points);
-    double err_koef = errors.average_measurement_error_ordinate();
+    double err_abs = errors.average_measurement_error_abscissa();
+    double err_ord = errors.average_measurement_error_ordinate();
     QCPErrorBars *errorBars = new QCPErrorBars(ui->chartwidget->xAxis, ui->chartwidget->yAxis);
+    QCPErrorBars *errorBars2 = new QCPErrorBars(ui->chartwidget->yAxis, ui->chartwidget->xAxis);
 
 
     QVector<double> x(count_of_points), y(count_of_points);
@@ -60,7 +63,8 @@ void Widget::makePlot()
     {
         x[i] = abscissa_values[i];
         y[i] = ordinate_values[i];
-        y_err[i] = err_koef;
+        x_err[i] = err_abs;
+        y_err[i] = err_ord;
     }
 
 
@@ -84,6 +88,8 @@ void Widget::makePlot()
     ui->chartwidget->graph(0)->setData(x, y);
     errorBars->setDataPlottable(ui->chartwidget->graph(0));
     errorBars->setData(y_err);
+    errorBars2->setDataPlottable(ui->chartwidget->graph(0));
+    errorBars2->setData(x_err);
 
 
     // Линейная регрессия
