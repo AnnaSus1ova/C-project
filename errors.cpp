@@ -22,7 +22,7 @@
         {
             sum += (value - mean) * (value - mean);
         }
-        return std::sqrt(sum / values.size());
+        return std::sqrt(sum / (values.size() * (values.size() - 1)));
     }
 
     double MeasurementError::getMeanValue() const
