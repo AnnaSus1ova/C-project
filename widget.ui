@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1187</width>
-    <height>837</height>
+    <height>884</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,23 +17,16 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>270</y>
-     <width>161</width>
+     <y>400</y>
+     <width>181</width>
      <height>92</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QCheckBox" name="checkBox_2">
+     <widget class="QPushButton" name="addErrorsButton">
       <property name="text">
-       <string>С погрешностями</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="checkBox">
-      <property name="text">
-       <string>С сеткой</string>
+       <string>Добавить погрешности</string>
       </property>
      </widget>
     </item>
@@ -49,10 +42,10 @@
   <widget class="QCustomPlot" name="chartwidget" native="true">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>200</x>
      <y>20</y>
-     <width>981</width>
-     <height>801</height>
+     <width>961</width>
+     <height>841</height>
     </rect>
    </property>
   </widget>

@@ -8,7 +8,6 @@
 #include "lineral-regression.h"
 #include "errors.h"
 #include <vector>
-#include <tuple>
 #include <algorithm>
 #include <QFile>
 #include <QFileDialog>
@@ -28,13 +27,11 @@ public:
     ~Widget();
 
 private slots:
-    void on_checkBox_2_stateChanged(int arg1);
-
-    void on_checkBox_checkStateChanged(const Qt::CheckState &arg1);
-
     void makePlot();
 
     void on_downloadButton_clicked();
+
+    void on_addErrorsButton_clicked();
 
 private:
     Ui::Widget *ui;

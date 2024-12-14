@@ -17,17 +17,6 @@ Widget::~Widget()
 }
 
 
-void Widget::on_checkBox_2_stateChanged(int arg1)
-{
-    // Добавление сетки
-}
-
-
-void Widget::on_checkBox_checkStateChanged(const Qt::CheckState &arg1)
-{
-    // Добавление погрешностей к графику
-}
-
 auto find_range(std::vector<double> &values) {
     double min_el = values[0];
     double max_el = values[0];
@@ -40,31 +29,17 @@ auto find_range(std::vector<double> &values) {
 }
 
 
-
 void Widget::makePlot()
 {
-
     std::vector<double> abscissa_values = Data.get_abscissa();
     std::vector<double> ordinate_values = Data.get_ordinate();
     const size_t count_of_points = abscissa_values.size();
-
-
-    MeasurementError errors(ordinate_values);
-    QVector<double> x_err(count_of_points);
-    QVector<double> y_err(count_of_points);
-    double err_abs = errors.average_measurement_error_abscissa();
-    double err_ord = errors.average_measurement_error_ordinate();
-    QCPErrorBars *errorBars = new QCPErrorBars(ui->chartwidget->xAxis, ui->chartwidget->yAxis);
-    QCPErrorBars *errorBars2 = new QCPErrorBars(ui->chartwidget->yAxis, ui->chartwidget->xAxis);
-
 
     QVector<double> x(count_of_points), y(count_of_points);
     for (int i=0; i<count_of_points; ++i)
     {
         x[i] = abscissa_values[i];
         y[i] = ordinate_values[i];
-        x_err[i] = err_abs;
-        y_err[i] = err_ord;
     }
 
 
@@ -80,16 +55,12 @@ void Widget::makePlot()
     double y_max = *std::max_element(ordinate_values.begin(), ordinate_values.end());
 
 
-    // точки графика
+    // Добавление точек графика
     ui->chartwidget->addGraph(ui->chartwidget->xAxis, ui->chartwidget->yAxis);
     ui->chartwidget->graph(0)->setPen(QColor(255, 0, 0, 255));
     ui->chartwidget->graph(0)->setLineStyle(QCPGraph::lsNone);
     ui->chartwidget->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
     ui->chartwidget->graph(0)->setData(x, y);
-    errorBars->setDataPlottable(ui->chartwidget->graph(0));
-    errorBars->setData(y_err);
-    errorBars2->setDataPlottable(ui->chartwidget->graph(0));
-    errorBars2->setData(x_err);
 
 
     // Линейная регрессия
@@ -118,9 +89,6 @@ void Widget::makePlot()
     ui->chartwidget->graph(1)->setData(x1, y1);
     ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
 
-    std::printf("k=%.2lf b=%.2lf", k, b);
-    std::printf("error_ordinate=%.2lf error_abscissa=%.2lf", errors.average_measurement_error_ordinate(), errors.average_measurement_error_abscissa());
-
 
     // set axes ranges, so we see all data:
     ui->chartwidget->xAxis->setRange(x_min - 0.1 * (x_max-x_min), x_max + 0.1 * (x_max-x_min));
@@ -144,3 +112,32 @@ void Widget::on_downloadButton_clicked()
 
 }
 
+
+void Widget::on_addErrorsButton_clicked()
+{
+    // Добавление погрешностей к графику
+    std::vector<double> abscissa_values = Data.get_abscissa();
+    std::vector<double> ordinate_values = Data.get_ordinate();
+    const size_t count_of_points = abscissa_values.size();
+
+    MeasurementError errors(abscissa_values);
+    QVector<double> x_err(count_of_points);
+    QVector<double> y_err(count_of_points);
+    double err_abs = errors.average_measurement_error_abscissa();
+    double err_ord = errors.average_measurement_error_ordinate();
+    QCPErrorBars *errorBars = new QCPErrorBars(ui->chartwidget->xAxis, ui->chartwidget->yAxis);
+    QCPErrorBars *errorBars2 = new QCPErrorBars(ui->chartwidget->yAxis, ui->chartwidget->xAxis);
+
+    for (int i=0; i<count_of_points; ++i)
+    {
+        x_err[i] = err_abs;
+        y_err[i] = err_ord;
+    }
+
+
+    errorBars->setDataPlottable(ui->chartwidget->graph(0));
+    errorBars->setData(y_err);
+    errorBars2->setDataPlottable(ui->chartwidget->graph(0));
+    errorBars2->setData(x_err);
+    ui->chartwidget->replot();
+}
