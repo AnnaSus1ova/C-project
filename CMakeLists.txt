@@ -24,6 +24,13 @@ set(PROJECT_SOURCES
         Data.h
         Vector.cpp
         Vector.h
+        qcustomplot.cpp
+        qcustomplot.h
+        lineral-regression.cpp
+        lineral-regression.h
+        quadratic-regression.cpp
+        quadratic-regression.h
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -39,6 +46,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         wrong_input.ui
         wrong_input.cpp
         wrong_input.h
+        custom_split.cpp
+        custom_split.h
+
 
 
 

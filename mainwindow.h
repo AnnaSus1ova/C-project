@@ -26,6 +26,10 @@ private slots:
 
     void on_AddFile2_clicked();
 
+    void on_Graph1_clicked();
+
+    void on_Graph2_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
