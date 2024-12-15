@@ -3,16 +3,15 @@
 #include <iostream>
 #include <vector>
 #include "Data.h"
-
-using namespace std;
+#include "quadratic-regression.h"
 
 // Функция для расчета коэффициентов a, b, c
-void quadraticRegression(const vector<double>& x, const vector<double>& y, double& a, double& b, double& c) {
+QuadraticRegression::QuadraticRegression(const std::vector<double>& x, const std::vector<double>& y)
+: a{0}, b{0}, c{0} {
     int n = x.size();
     if (n < 3) {
-        throw runtime_error("Not enough data points.");
-    }
-
+        throw std::runtime_error("Not enough data points.");}
+    
     double sumX = 0, sumY = 0, sumX2 = 0, sumX3 = 0, sumX4 = 0, sumXY = 0, sumX2Y = 0;
 
     for (int i = 0; i < n; ++i) {
@@ -29,10 +28,10 @@ void quadraticRegression(const vector<double>& x, const vector<double>& y, doubl
     double A[3][3] = {
         {sumX4, sumX3, sumX2},
         {sumX3, sumX2, sumX},
-        {sumX2, sumX, n}
+        {sumX2, sumX, n * 1.0}
     };
 
-    double B[3] = { sumX2Y, sumXY, sumY };
+    double B[3] = {sumX2Y, sumXY, sumY};
 
     // Решение системы уравнений методом Гаусса
     for (int i = 0; i < 3; ++i) {
@@ -56,26 +55,24 @@ void quadraticRegression(const vector<double>& x, const vector<double>& y, doubl
     }
 
     // Коэффициенты квадратичной регрессии
-    c = B[0];
+    a = B[0];
     b = B[1];
-    a = B[2];
-}
+    c = B[2];
 
-int main() {
-    // ВМЕСТО X И Y НЕОБХОДИМО БУДЕТ БРАТЬ ДАННЫЕ ИЗ VECTOR_2D
-    // vector<double> x = {1, 2, 3, 4, 5};
-    // vector<double> y = {5, 4, 3, 2, 1};
-
-    double a, b, c;
-
-    try {
-        quadraticRegression(Data.get_abscissa(), Data.get_ordinate(), a, b, c);
-        cout << "a: " << a << endl;
-        cout << "b: " << b << endl;
-        cout << "c: " << c << endl;
-    } catch (const exception& e) {
-        cerr << e.what() << endl;
     }
 
-    return 0;
+    
+double QuadraticRegression::getA() const {
+    return a;
+}
+
+double QuadraticRegression::getB() const {
+    return b;
+}
+
+QuadraticRegression::~QuadraticRegression(){}
+
+
+double QuadraticRegression::getC() const {
+    return c;
 }
