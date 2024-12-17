@@ -13,6 +13,8 @@
 #include "wrong_input.h"
 #include <QFile>
 #include <QByteArray>
+#include "widget.h"
+#include "custom_split.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -56,25 +58,6 @@ void MainWindow::on_Error_clicked()
     QString AVString_ord = QString::number(AV_ord.average_value_ordinate());
     ui->textBrowser->insertPlainText(QString(AVString_ord));
 }
-
-
-std::vector<std::string> strings;
-
-std::vector<std::string> customSplit(const std::string& str, const char* separator) {
-    int startIndex = 0;
-    std::vector<std::string> result;
-
-    for (int i = 0; i <= str.size(); i++) {
-        if (str[i] == separator[0] || i == str.size()) {
-            std::string temp = str.substr(startIndex, i - startIndex);
-            if (!temp.empty())
-                result.push_back(temp);
-            startIndex = i + 1;
-        }
-    }
-    return result;
-}
-
 
 void MainWindow::on_AddFile1_clicked()
 {
@@ -146,5 +129,23 @@ void MainWindow::on_question_clicked()
     secdialog.setModal(true);
     secdialog.exec();
 
+}
+
+
+void MainWindow::on_Graph1_clicked()
+{
+    Widget wid(1);
+
+    wid.setModal(true);
+    wid.exec();
+}
+
+
+void MainWindow::on_Graph2_clicked()
+{
+    Widget wid(2);
+    std::cout << wid.getFlag() << std::endl;
+    wid.setModal(true);
+    wid.exec();
 }
 
