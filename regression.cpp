@@ -9,7 +9,6 @@ Regression::~Regression(){}
 
 
 std::vector<double> Regression::get_coeff() const {
-    std::vector<double> vec;
-    return vec;
+    return coeff;
 }
 

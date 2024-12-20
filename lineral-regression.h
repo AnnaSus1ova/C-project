@@ -5,9 +5,6 @@
 
 class LinearRegression : public Regression
 {
-private:
-    std::vector<double> coeff;
-
 public:
 
     LinearRegression() = default;

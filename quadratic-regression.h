@@ -5,9 +5,6 @@
 
 class QuadraticRegression : public Regression
 {
-private:
-    std::vector<double> coeff;
-
 public:
 
     QuadraticRegression() = default;

@@ -4,7 +4,7 @@
 
 class Regression
 {
-private:
+protected:
     std::vector<double> coeff;
 
 public:

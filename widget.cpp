@@ -1,6 +1,7 @@
 #include "widget.h"
 #include "./ui_widget.h"
 #include "stdio.h"
+#include <cmath>
 
 Widget::Widget(std::vector<double> coeff, QWidget *parent)
     : QDialog(parent)
@@ -76,15 +77,17 @@ void Widget::makePlot()
 
     if (my_coeff.size() == 3){
         // Квадратичная регрессия
-        double a = my_coeff[0];
+        double c = my_coeff[0];
         double b = my_coeff[1];
-        double c = my_coeff[2];
+        double a = my_coeff[2];
 
         QVector<double> x1(512), y1(512);
         for (int i=0; i < 512 ; ++i)
         {
             x1[i] = x_min + (x_max - x_min) * i / 512;
-            y1[i] = a * x1[i] * x1[i] + b * x1[i] + c;
+            for (int j=0; j < 3; ++j){
+                y1[i] = my_coeff[j] * std::pow(x1[i], j);
+            }
         }
         ui->chartwidget->addGraph();
         ui->chartwidget->graph(1)->setData(x1, y1);
