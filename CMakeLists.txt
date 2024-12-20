@@ -30,6 +30,8 @@ set(PROJECT_SOURCES
         lineral-regression.h
         quadratic-regression.cpp
         quadratic-regression.h
+        regression.cpp
+        regression.h
 
 )
 

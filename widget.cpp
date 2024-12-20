@@ -1,12 +1,13 @@
 #include "widget.h"
 #include "./ui_widget.h"
 #include "stdio.h"
+#include <cmath>
 
-Widget::Widget(int flag, QWidget *parent)
+Widget::Widget(std::vector<double> coeff, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Widget)
-    , myflag(flag)
 {
+    my_coeff = coeff;
     ui->setupUi(this);
     Widget::makePlot();
 }
@@ -62,35 +63,19 @@ void Widget::makePlot()
     ui->chartwidget->graph(0)->setLineStyle(QCPGraph::lsNone);
     ui->chartwidget->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
     ui->chartwidget->graph(0)->setData(x, y);
-    if (myflag == 1){
-        // Линейная регрессия
-        LinearRegression regression(abscissa_values, ordinate_values);
-        double k = regression.getK();
-        double b = regression.getB();
-        QVector<double> x1 = {x_min, x_max};
-        QVector<double> y1 = {x_min * k + b, x_max * k + b};
-        ui->chartwidget->addGraph();
-        ui->chartwidget->graph(1)->setData(x1, y1);
-        ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
-    }
 
-    if (myflag == 2){
-        // Квадратичная регрессия
-        QuadraticRegression regression(abscissa_values, ordinate_values);
-        double a = regression.getA();
-        double b = regression.getB();
-        double c = regression.getC();
 
-        QVector<double> x1(512), y1(512);
-        for (int i=0; i < 512 ; ++i)
-        {
-            x1[i] = x_min + (x_max - x_min) * i / 512;
-            y1[i] = a * x1[i] * x1[i] + b * x1[i] + c;
+    QVector<double> x1(512), y1(512);
+    for (int i=0; i < 512 ; ++i)
+    {
+        x1[i] = x_min + (x_max - x_min) * i / 512;
+        for (int j=0; j < my_coeff.size(); ++j){
+            y1[i] = my_coeff[j] * std::pow(x1[i], j);
         }
-        ui->chartwidget->addGraph();
-        ui->chartwidget->graph(1)->setData(x1, y1);
-        ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
     }
+    ui->chartwidget->addGraph();
+    ui->chartwidget->graph(1)->setData(x1, y1);
+    ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
 
 
 

@@ -2,12 +2,17 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "regression.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
+
+enum class type_regression;
+
+std::unique_ptr<Regression> create_regression(type_regression t);
 
 class MainWindow : public QMainWindow
 {
