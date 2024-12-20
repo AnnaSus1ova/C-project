@@ -4,8 +4,7 @@
 #include "lineral-regression.h"
 
 
-LinearRegression::LinearRegression(const std::vector<double>& x, const std::vector<double>& y)
-    : k{0}, b{0} {
+LinearRegression::LinearRegression(const std::vector<double>& x, const std::vector<double>& y) {
     int n = x.size();
     double sum_x = 0, sum_y = 0, sum_xy = 0, sum_x2 = 0;
 
@@ -17,18 +16,15 @@ LinearRegression::LinearRegression(const std::vector<double>& x, const std::vect
     }
 
     // Вычисляем коэффициенты
-    k = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x);
-    b = (sum_y - k * sum_x) / n;
-    std::cout << b;
+    double k = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x);
+    double b = (sum_y - k * sum_x) / n;
+    coeff.push_back(k);
+    coeff.push_back(b);
 }
 
 LinearRegression::~LinearRegression(){}
 
 
-double LinearRegression::getK() const {
-    return k;
-}
-
-double LinearRegression::getB() const {
-    return b;
+std::vector<double> LinearRegression::get_coeff() const {
+    return coeff;
 }

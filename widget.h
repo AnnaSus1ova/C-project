@@ -23,13 +23,9 @@ class Widget : public QDialog
     Q_OBJECT
 
 public:
-    Widget(int flag = 1, QWidget *parent = nullptr);
+    Widget(std::vector<double> coeff, QWidget *parent = nullptr);
     ~Widget();
     void makePlot();
-    int getFlag()
-    {
-        return myflag;
-    }
 
 
 private slots:
@@ -39,7 +35,7 @@ private slots:
     void on_addErrorsButton_clicked();
 
 private:
-    int myflag;
+    std::vector<double> my_coeff;
     Ui::Widget *ui;
 };
 #endif // WIDGET_H

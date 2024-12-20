@@ -1,12 +1,12 @@
 #ifndef LINEARREGRESSION_H
 #define LINEARREGRESSION_H
 #include <vector>
+#include "regression.h"
 
-class LinearRegression 
+class LinearRegression : public Regression
 {
 private:
-    double k; // Коэффициент наклона
-    double b; // Смещение
+    std::vector<double> coeff;
 
 public:
 
@@ -15,15 +15,11 @@ public:
     // Конструктор с параметрами
     LinearRegression(const std::vector<double>& x, const std::vector<double>& y);
     
-    ~LinearRegression();
+    ~LinearRegression() override;
 
-
-    // Метод для подгонки модели
-    //void fit(const std::vector<double>& x, const std::vector<double>& y);
 
     // Методы для получения коэффициентов
-    double getK() const;
-    double getB() const;
+    std::vector<double> get_coeff() const override;
 };
 
 #endif // LINEARREGRESSION_H

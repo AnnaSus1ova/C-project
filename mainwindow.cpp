@@ -16,6 +16,10 @@
 #include <QByteArray>
 #include "widget.h"
 #include "custom_split.h"
+#include "regression.h"
+
+
+enum class type_regression{Linear, Quadratic};
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,8 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix(":/images/img/my-background.png");
 
     ui->picture->setPixmap(pix);
-
-
 
 }
 
@@ -76,7 +78,7 @@ void MainWindow::on_AddFile1_clicked()
         if (text1.isEmpty()) return;
     }
     try{
-        for (QChar& ch : text1) {
+        for (QChar ch : text1) {
             if (!ch.isDigit() && ch != '.' && ch != ' ' && ch != '-') {
                 throw std::invalid_argument("Строка содержит недопустимые символы!");
             }
@@ -113,7 +115,7 @@ void MainWindow::on_AddFile2_clicked()
         if (text2.isEmpty()) return;
     }
     try{
-        for (QChar& ch : text2) {
+        for (QChar ch : text2) {
             if (!ch.isDigit() && ch != '.' && ch != ' ' && ch != '-') {
                 throw std::invalid_argument("Строка содержит недопустимые символы!");
             }
@@ -142,6 +144,17 @@ void MainWindow::on_question_clicked()
 
 }
 
+std::unique_ptr<Regression> create_regression(type_regression t, const std::vector<double>& x, const std::vector<double>& y){
+    if (t == type_regression::Linear){
+        LinearRegression line(x, y);
+        return std::make_unique<LinearRegression>(line);
+    }
+    else {
+        QuadraticRegression quadr(x, y);
+        return std::make_unique<QuadraticRegression>(quadr);
+    }
+}
+
 
 void MainWindow::on_Graph1_clicked()
 {
@@ -151,8 +164,8 @@ void MainWindow::on_Graph1_clicked()
         different_quantity.exec();
         }
     else{
-        Widget wid(1);
-
+        std::unique_ptr<Regression> regr = create_regression(type_regression::Linear, Data.get_abscissa(), Data.get_ordinate());
+        Widget wid((*regr).get_coeff());
         wid.setModal(true);
         wid.exec();
     }
@@ -167,8 +180,8 @@ void MainWindow::on_Graph2_clicked()
         different_quantity.exec();
     }
     else{
-        Widget wid(2);
-        std::cout << wid.getFlag() << std::endl;
+        std::unique_ptr<Regression> regr = create_regression(type_regression::Quadratic, Data.get_abscissa(), Data.get_ordinate());
+        Widget wid((*regr).get_coeff());
         wid.setModal(true);
         wid.exec();
     }

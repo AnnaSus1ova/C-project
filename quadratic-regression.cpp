@@ -6,8 +6,7 @@
 #include "quadratic-regression.h"
 
 // Функция для расчета коэффициентов a, b, c
-QuadraticRegression::QuadraticRegression(const std::vector<double>& x, const std::vector<double>& y)
-: a{0}, b{0}, c{0} {
+QuadraticRegression::QuadraticRegression(const std::vector<double>& x, const std::vector<double>& y) {
     int n = x.size();
     if (n < 3) {
         throw std::runtime_error("Not enough data points.");}
@@ -55,24 +54,16 @@ QuadraticRegression::QuadraticRegression(const std::vector<double>& x, const std
     }
 
     // Коэффициенты квадратичной регрессии
-    a = B[0];
-    b = B[1];
-    c = B[2];
+    coeff.push_back(B[0]);
+    coeff.push_back(B[1]);
+    coeff.push_back(B[2]);
 
     }
 
     
-double QuadraticRegression::getA() const {
-    return a;
-}
-
-double QuadraticRegression::getB() const {
-    return b;
+std::vector<double> QuadraticRegression::get_coeff() const{
+    return coeff;
 }
 
 QuadraticRegression::~QuadraticRegression(){}
 
-
-double QuadraticRegression::getC() const {
-    return c;
-}
