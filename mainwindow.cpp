@@ -77,7 +77,7 @@ void MainWindow::on_AddFile1_clicked()
     }
     try{
         for (QChar& ch : text1) {
-            if (!ch.isDigit() && ch != '.' && ch != ' ') {
+            if (!ch.isDigit() && ch != '.' && ch != ' ' && ch != '-') {
                 throw std::invalid_argument("Строка содержит недопустимые символы!");
             }
         }
@@ -114,7 +114,7 @@ void MainWindow::on_AddFile2_clicked()
     }
     try{
         for (QChar& ch : text2) {
-            if (!ch.isDigit() && ch != '.' && ch != ' ') {
+            if (!ch.isDigit() && ch != '.' && ch != ' ' && ch != '-') {
                 throw std::invalid_argument("Строка содержит недопустимые символы!");
             }
         }
@@ -145,7 +145,7 @@ void MainWindow::on_question_clicked()
 
 void MainWindow::on_Graph1_clicked()
 {
-    if (Data.get_abscissa().size() != Data.get_ordinate().size()){
+    if (Data.get_abscissa().size() != Data.get_ordinate().size() or Data.get_abscissa().size() == 0 or  Data.get_ordinate().size() == 0){
         DifferentQuantity different_quantity;
         different_quantity.setModal(true);
         different_quantity.exec();
@@ -161,7 +161,7 @@ void MainWindow::on_Graph1_clicked()
 
 void MainWindow::on_Graph2_clicked()
 {
-    if (Data.get_abscissa().size() != Data.get_ordinate().size()){
+    if (Data.get_abscissa().size() != Data.get_ordinate().size() or Data.get_abscissa().size() == 0 or  Data.get_ordinate().size() == 0){
         DifferentQuantity different_quantity;
         different_quantity.setModal(true);
         different_quantity.exec();
