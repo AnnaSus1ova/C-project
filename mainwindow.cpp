@@ -76,7 +76,7 @@ void MainWindow::on_AddFile1_clicked()
         if (text1.isEmpty()) return;
     }
     try{
-        for (const QChar& ch : text1) {
+        for (QChar& ch : text1) {
             if (!ch.isDigit() && ch != '.' && ch != ' ') {
                 throw std::invalid_argument("Строка содержит недопустимые символы!");
             }
@@ -113,7 +113,7 @@ void MainWindow::on_AddFile2_clicked()
         if (text2.isEmpty()) return;
     }
     try{
-        for (const QChar& ch : text2) {
+        for (QChar& ch : text2) {
             if (!ch.isDigit() && ch != '.' && ch != ' ') {
                 throw std::invalid_argument("Строка содержит недопустимые символы!");
             }
