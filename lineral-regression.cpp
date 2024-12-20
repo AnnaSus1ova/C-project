@@ -18,8 +18,8 @@ LinearRegression::LinearRegression(const std::vector<double>& x, const std::vect
     // Вычисляем коэффициенты
     double k = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x);
     double b = (sum_y - k * sum_x) / n;
-    coeff.push_back(k);
     coeff.push_back(b);
+    coeff.push_back(k);
 }
 
 LinearRegression::~LinearRegression(){}

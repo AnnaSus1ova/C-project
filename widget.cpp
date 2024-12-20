@@ -64,35 +64,18 @@ void Widget::makePlot()
     ui->chartwidget->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
     ui->chartwidget->graph(0)->setData(x, y);
 
-    if (my_coeff.size() == 2){
-        // Линейная регрессия
-        double k = my_coeff[0];
-        double b = my_coeff[1];
-        QVector<double> x1 = {x_min, x_max};
-        QVector<double> y1 = {x_min * k + b, x_max * k + b};
-        ui->chartwidget->addGraph();
-        ui->chartwidget->graph(1)->setData(x1, y1);
-        ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
-    }
 
-    if (my_coeff.size() == 3){
-        // Квадратичная регрессия
-        double c = my_coeff[0];
-        double b = my_coeff[1];
-        double a = my_coeff[2];
-
-        QVector<double> x1(512), y1(512);
-        for (int i=0; i < 512 ; ++i)
-        {
-            x1[i] = x_min + (x_max - x_min) * i / 512;
-            for (int j=0; j < 3; ++j){
-                y1[i] = my_coeff[j] * std::pow(x1[i], j);
-            }
+    QVector<double> x1(512), y1(512);
+    for (int i=0; i < 512 ; ++i)
+    {
+        x1[i] = x_min + (x_max - x_min) * i / 512;
+        for (int j=0; j < my_coeff.size(); ++j){
+            y1[i] = my_coeff[j] * std::pow(x1[i], j);
         }
-        ui->chartwidget->addGraph();
-        ui->chartwidget->graph(1)->setData(x1, y1);
-        ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
     }
+    ui->chartwidget->addGraph();
+    ui->chartwidget->graph(1)->setData(x1, y1);
+    ui->chartwidget->graph(1)->setPen(QPen(QColor(120, 120, 120), 2));
 
 
 
